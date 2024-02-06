@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
-const Schema = mongoose.Schema({
-    name: {
+const CrudSchema =new mongoose.Schema({
+    title: {
         required: true, type: String,
     }, description: {
         required: true, type: String
@@ -10,4 +10,4 @@ const Schema = mongoose.Schema({
         type:String
     }
 })
-module.exports = mongoose.model('Crud', Schema)
+module.exports = mongoose.model('Crud', CrudSchema)

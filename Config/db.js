@@ -1,5 +1,6 @@
 const {mongoose} = require('mongoose');
 require('dotenv').config();
+
 // let connection;
 // try{
 //    connection= await mongoose.connect(process.env.MONGO_URI,{})
@@ -8,7 +9,7 @@ require('dotenv').config();
 // }catch {
 //     console.log("Error while connecting to MongoDB");
 // }
-const connection= await mongoose.connect(process.env.MONGO_URI,{})
+const connection=mongoose.connect(process.env.MONGO_URI,{})
     .then(con=>console.log("Connected to MongoDB"))
     .catch((err)=>console.log(err));
 

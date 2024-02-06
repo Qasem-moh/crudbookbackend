@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 const app = express();
 const PORT = process.env.PORT || 5452;
 const router = require('./routes/Routes');
+const DB=require('./Config/db')
 //config & use
 dotenv.config();
 app.use(bodyParser.urlencoded({ extended: true }));
