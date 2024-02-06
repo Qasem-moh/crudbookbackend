@@ -1,13 +1,17 @@
-const mysql = require('mysql');
-const connection = mysql.createConnection({
-    host:"localhost",
-    user:"root",
-    password:"root",
-    database:"crud"
-})
-connection.connect((err)=>{
-    if(err) return console.log(err);
-    console.log("Connected to CRUD!");
-});
+const {mongoose} = require('mongoose');
+require('dotenv').config();
+// let connection;
+// try{
+//    connection= await mongoose.connect(process.env.MONGO_URI,{})
+//         .then(con=>console.log("Connected to MongoDB"))
+//         .catch((err)=>console.log(err));
+// }catch {
+//     console.log("Error while connecting to MongoDB");
+// }
+const connection= await mongoose.connect(process.env.MONGO_URI,{})
+    .then(con=>console.log("Connected to MongoDB"))
+    .catch((err)=>console.log(err));
+
+
 
 module.exports = connection;
