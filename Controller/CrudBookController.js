@@ -1,7 +1,7 @@
 const Crud=require('../Models/Crud.Model');
 const User=require('../Models/Test.Model');
 
-exports.crudBook=async (req,res)=>{
+exports.createnewCrudBook=async (req,res)=>{
     try{
         const crud=new Crud({
             title:req.body.title,
@@ -11,6 +11,14 @@ exports.crudBook=async (req,res)=>{
         const saveCrud=await crud.save();
         res.status(200).json(saveCrud);
     }catch(err){
+        res.status(500).json({err:err.message});
+    }
+}
+exports.getAllCrud=async (req,res)=>{
+    try {
+        const crud=await Crud.find();
+        res.status(200).json(crud);
+    }catch (err){
         res.status(500).json({err:err.message});
     }
 }
