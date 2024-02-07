@@ -5,6 +5,7 @@ const CrudBookController = require('../Controller/CrudBookController');
 //Routes
 router.post('/created', CrudBookController.createnewCrudBook);
 router.get('/getallcrudbooks', CrudBookController.getAllCrud);
+router.get('/getcrudbyid/:id', CrudBookController.getAllCrud);
 
 
 
