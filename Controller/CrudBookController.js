@@ -27,8 +27,7 @@ exports.getOneCrudByID = async (req, res) => {
 
         const data = await Crud.findById(req.params.id);
         res.status(200).json(data);
-        res.json()
-    } catch (err) {
+            } catch (err) {
         res.status(500).json({err: err.message})
     }
 
